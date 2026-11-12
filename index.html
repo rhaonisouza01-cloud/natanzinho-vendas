@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Natanzinho Lima – Ingressos | Turnê Ao Vivo</title>
+  <meta name="description" content="Compre ingressos para os shows do Natanzinho Lima. Projeto acadêmico.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="#inicio" class="logo">Natanzinho<span>Lima</span></a>
+    <nav aria-label="Principal">
+      <a href="#shows">Shows</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <button class="cart-btn" id="openCart" aria-label="Abrir carrinho">
+      Carrinho <span class="badge" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-text">
+        <p class="hero-kicker">Turnê ao vivo 2026</p>
+        <h1>Natanzinho<br>Lima</h1>
+        <p class="hero-sub">A voz do piseiro e do sertanejo no palco. Garanta seu ingresso e cante cada música do começo ao fim.</p>
+        <a href="#shows" class="btn btn-primary">Ver datas e comprar</a>
+      </div>
+      <div class="stub" aria-hidden="true">
+        <div class="stub-main">
+          <small>Admit one</small>
+          <strong>Ao Vivo</strong>
+          <span>Pista · Premium · Camarote</span>
+        </div>
+        <div class="stub-tear"></div>
+        <div class="stub-side">N° 0001</div>
+      </div>
+    </section>
+
+    <section class="section" id="shows">
+      <h2>Próximos shows</h2>
+      <p class="section-intro">Escolha a data, o setor e a quantidade. Você finaliza a compra no carrinho.</p>
+      <div class="shows" id="showsList"></div>
+    </section>
+
+    <section class="section about" id="sobre">
+      <h2>Sobre o artista</h2>
+      <div class="about-grid">
+        <p>Natanzinho Lima é cantor e compositor cearense, conhecido por levar o piseiro e o sertanejo para todo o país com músicas que viraram trilha de festas e redes sociais. Suas apresentações misturam repertório de sucessos, banda completa e muita interação com o público.</p>
+        <ul class="facts">
+          <li><strong>3h</strong> de show</li>
+          <li><strong>+30</strong> músicas no repertório</li>
+          <li><strong>Livre</strong> para maiores de 14 anos acompanhados</li>
+        </ul>
+      </div>
+      <p class="disclaimer">Projeto acadêmico: datas, locais e preços são fictícios e nenhuma compra real é realizada.</p>
+    </section>
+
+    <section class="section" id="faq">
+      <h2>Dúvidas frequentes</h2>
+      <div class="faq">
+        <details><summary>Como recebo meu ingresso?</summary><p>Após a confirmação, o ingresso digital com QR Code é enviado para o e-mail informado na compra.</p></details>
+        <details><summary>Posso comprar meia-entrada?</summary><p>Sim. Estudantes, idosos e pessoas com deficiência têm direito a 50% de desconto mediante comprovação na entrada.</p></details>
+        <details><summary>Qual o cupom de desconto?</summary><p>Use o cupom <strong>EXPO10</strong> no carrinho para 10% de desconto.</p></details>
+        <details><summary>Posso cancelar a compra?</summary><p>Você pode pedir o cancelamento em até 7 dias após a compra, conforme o Código de Defesa do Consumidor.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <p class="logo">Natanzinho<span>Lima</span></p>
+        <p class="muted">Ingressos oficiais da turnê. Compra segura e rápida.</p>
+      </div>
+      <div>
+        <h3>Navegação</h3>
+        <a href="#shows">Shows</a><a href="#sobre">Sobre</a><a href="#faq">Dúvidas</a>
+      </div>
+      <div>
+        <h3>Atendimento</h3>
+        <p class="muted">techlima@gmail.com.br<br>Seg a sex, 9h às 18h</p>
+      </div>
+      <div>
+        <h3>Pagamento</h3>
+        <p class="muted">Pix · Cartão de crédito · Boleto</p>
+      </div>
+    </div>
+    <p class="copy">© 2026 Projeto Expo – Curso de Gestão de tecnologia da informção. Site fictício sem fins comerciais.</p>
+  </footer>
+
+  <!-- Carrinho lateral -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Carrinho" aria-hidden="true">
+    <div class="drawer-head">
+      <h2>Seu carrinho</h2>
+      <button class="icon-btn" id="closeCart" aria-label="Fechar carrinho">×</button>
+    </div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot" id="cartFoot">
+      <div class="coupon">
+        <input type="text" id="couponInput" placeholder="Cupom de desconto">
+        <button class="btn btn-ghost" id="applyCoupon">Aplicar</button>
+      </div>
+      <p class="coupon-msg" id="couponMsg"></p>
+      <dl class="totals">
+        <div><dt>Subtotal</dt><dd id="subtotal">R$ 0,00</dd></div>
+        <div><dt>Desconto</dt><dd id="discount">R$ 0,00</dd></div>
+        <div><dt>Taxa de serviço (10%)</dt><dd id="fee">R$ 0,00</dd></div>
+        <div class="grand"><dt>Total</dt><dd id="total">R$ 0,00</dd></div>
+      </dl>
+      <button class="btn btn-primary full" id="checkoutBtn">Finalizar compra</button>
+      <button class="link-btn" id="clearCart">Esvaziar carrinho</button>
+    </div>
+  </aside>
+
+  <!-- Checkout -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="icon-btn modal-close" id="closeModal" aria-label="Fechar">×</button>
+      <form id="checkoutForm" novalidate>
+        <h2 id="modalTitle">Finalizar compra</h2>
+        <label>Nome completo<input type="text" name="nome" required></label>
+        <label>E-mail<input type="email" name="email" required></label>
+        <label>CPF<input type="text" name="cpf" inputmode="numeric" maxlength="14" placeholder="000.000.000-00" required></label>
+        <label>Forma de pagamento
+          <select name="pagamento">
+            <option>Pix</option><option>Cartão de crédito</option><option>Boleto</option>
+          </select>
+        </label>
+        <p class="form-error" id="formError"></p>
+        <button type="submit" class="btn btn-primary full">Confirmar pedido</button>
+      </form>
+      <div class="success" id="success" hidden>
+        <div class="check">✓</div>
+        <h2>Pedido confirmado!</h2>
+        <p>Código do pedido: <strong id="orderCode"></strong></p>
+        <p class="muted">Seus ingressos foram enviados por e-mail (simulação).</p>
+        <button class="btn btn-primary" id="doneBtn">Voltar ao site</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
