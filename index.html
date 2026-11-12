@@ -27,7 +27,13 @@
 
   <main>
     <section class="hero" id="inicio">
-      <img class="hero-img" src="banner.jpeg" alt="Natanzinho Lima no palco – Tech Lima">
+      <picture>
+  <!-- Imagem para celular -->
+  <source media="(max-width: 560px)" srcset="banner-mobile.png">
+
+  <!-- Imagem para computador -->
+  <img src="banner.jpeg" class="hero-img" alt="Natanzinho Lima">
+</picture>
       <div class="hero-bar">
         <div>
           <p class="hero-kicker">Agenda 2026</p>
