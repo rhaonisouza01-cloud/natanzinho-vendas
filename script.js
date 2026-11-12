@@ -1,9 +1,9 @@
 /* ===== Dados (fictícios, para o projeto) ===== */
 const SHOWS = [
-  { id: "sp", dia: "14", mes: "Mar", cidade: "São Paulo, SP", local: "Allianz Parque · 21h" },
-  { id: "fz", dia: "28", mes: "Mar", cidade: "Fortaleza, CE", local: "Marina Park · 21h", esgotando: "pista" },
-  { id: "bh", dia: "11", mes: "Abr", cidade: "Belo Horizonte, MG", local: "Mineirão · 20h" },
-  { id: "rec", dia: "25", mes: "Abr", cidade: "Recife, PE", local: "Classic Hall · 22h" }
+  { id: "sp", dia: "14", mes: "Jan", cidade: "São Paulo, SP", local: "Allianz Parque · 21h" },
+  { id: "fz", dia: "28", mes: "Jan", cidade: "Fortaleza, CE", local: "Marina Park · 21h", esgotando: "pista" },
+  { id: "bh", dia: "11", mes: "Jan", cidade: "Belo Horizonte, MG", local: "Mineirão · 20h" },
+  { id: "rec", dia: "25", mes: "Jan", cidade: "Recife, PE", local: "Classic Hall · 22h" }
 ];
 
 const SETORES = [
