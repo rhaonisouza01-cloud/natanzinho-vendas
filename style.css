@@ -169,6 +169,43 @@ h1, h2 { font-family: var(--fonte-titulo); font-weight: 800; font-style: italic;
   .sector { flex-wrap: wrap; }
   .footer-grid { grid-template-columns: 1fr; }
 }
+@media (max-width: 560px) {
+  .topbar nav { 
+    display: none; 
+  }
+
+  .show { 
+    grid-template-columns: 1fr; 
+  }
+
+  .show-date { 
+    flex-direction: row; 
+    gap: .6rem; 
+    border-right: 0; 
+    border-bottom: 4px dotted var(--sol); 
+  }
+
+  .show-date .dia { 
+    font-size: 2.2rem; 
+  }
+
+  .sector { 
+    flex-wrap: wrap; 
+  }
+
+  .footer-grid { 
+    grid-template-columns: 1fr; 
+  }
+
+  /* ===== Banner no celular ===== */
+  .hero-img {
+    width: 100%;
+    height: 280px;
+    min-height: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
