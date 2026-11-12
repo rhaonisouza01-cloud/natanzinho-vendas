@@ -1,9 +1,10 @@
 /* ===== Dados (fictícios, para o projeto) ===== */
 const SHOWS = [
-  { id: "sp", dia: "14", mes: "Jan", cidade: "São Paulo, SP", local: "Allianz Parque · 21h" },
-  { id: "fz", dia: "28", mes: "Jan", cidade: "Fortaleza, CE", local: "Marina Park · 21h", esgotando: "pista" },
-  { id: "bh", dia: "11", mes: "Jan", cidade: "Belo Horizonte, MG", local: "Mineirão · 20h" },
-  { id: "rec", dia: "25", mes: "Jan", cidade: "Recife, PE", local: "Classic Hall · 22h" }
+  { id: "jt", dia: "13", mes: "Nov", cidade: "Joaquim Távora, PR", local: "Local e horário em breve" },
+  { id: "cv", dia: "14", mes: "Nov", cidade: "Cascavel, PR", local: "Local e horário em breve" },
+  { id: "pv", dia: "19", mes: "Nov", cidade: "Porto Velho, RO", local: "Local e horário em breve" },
+  { id: "cn", dia: "20", mes: "Nov", cidade: "Caldas Novas, GO", local: "Local e horário em breve" },
+  { id: "tb", dia: "21", mes: "Nov", cidade: "Taubaté, SP", local: "Local e horário em breve" }
 ];
 
 const SETORES = [
@@ -25,7 +26,11 @@ const $ = (id) => document.getElementById(id);
 const moeda = (v) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
 function carregar() {
-  try { return JSON.parse(localStorage.getItem("carrinho-natanzinho")) || []; }
+  try {
+    const salvo = JSON.parse(localStorage.getItem("carrinho-natanzinho")) || [];
+    // descarta itens de shows/setores que não existem mais
+    return salvo.filter((i) => SHOWS.some((s) => s.id === i.showId) && SETORES.some((x) => x.id === i.setorId));
+  }
   catch (e) { return []; }
 }
 function salvar() {
