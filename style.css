@@ -203,7 +203,7 @@ h1, h2 { font-family: var(--fonte-titulo); font-weight: 800; font-style: italic;
     height: 280px;
     min-height: 0;
     object-fit: cover;
-    object-position: center;
+    object-position: 60% center;
   }
 }
 @media (prefers-reduced-motion: reduce) {
