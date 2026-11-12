@@ -170,40 +170,30 @@ h1, h2 { font-family: var(--fonte-titulo); font-weight: 800; font-style: italic;
   .footer-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .topbar nav { 
-    display: none; 
+  .topbar nav { display: none; }
+
+  .show { grid-template-columns: 1fr; }
+
+  .show-date {
+    flex-direction: row;
+    gap: .6rem;
+    border-right: 0;
+    border-bottom: 4px dotted var(--sol);
   }
 
-  .show { 
-    grid-template-columns: 1fr; 
-  }
+  .show-date .dia { font-size: 2.2rem; }
 
-  .show-date { 
-    flex-direction: row; 
-    gap: .6rem; 
-    border-right: 0; 
-    border-bottom: 4px dotted var(--sol); 
-  }
+  .sector { flex-wrap: wrap; }
 
-  .show-date .dia { 
-    font-size: 2.2rem; 
-  }
+  .footer-grid { grid-template-columns: 1fr; }
 
-  .sector { 
-    flex-wrap: wrap; 
-  }
-
-  .footer-grid { 
-    grid-template-columns: 1fr; 
-  }
-
-  /* ===== Banner no celular ===== */
+  /* Banner no celular */
   .hero-img {
     width: 100%;
-    height: 280px;
+    height: auto;
     min-height: 0;
-    object-fit: cover;
-    object-position: 60% center;
+    object-fit: contain;
+    object-position: center;
   }
 }
 @media (prefers-reduced-motion: reduce) {
